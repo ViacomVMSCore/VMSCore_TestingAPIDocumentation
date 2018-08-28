@@ -1,14 +1,12 @@
 swagger: '2.0'
 info:
   version: v1
-  title: 'AliasUsers'
-  description: This API deals with data related to ALIAS users and their details like First Name, Last Name, Email ID and other informations.It performs various CRUD(Create, Retrieve, Update and Delete) actions.
+  title: AliasUsers
 host: 'localhost:55983'
 schemes:
   - http
 paths:
   /api/AliasUsers:
-    x-summary: Create and Retrive Alias Users
     get:
       tags:
         - AliasUsers
@@ -55,7 +53,6 @@ paths:
           schema:
             $ref: '#/definitions/AliasUsers'
   '/api/AliasUsers/{id}':
-    x-summary: Retrieve/Update/Delete AliasUsers details
     get:
       tags:
         - AliasUsers
