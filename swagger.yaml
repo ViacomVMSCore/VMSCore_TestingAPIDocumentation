@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: v1
-  title: 'AliasUsers'
+  title: 'AliasUsersTest'
   description: This API deals with data related to ALIAS users and their details like First Name, Last Name, Email ID and other informations.It performs various CRUD(Create, Retrieve, Update and Delete) actions.
 host: 'localhost:55983'
 schemes:
