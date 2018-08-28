@@ -1,0 +1,149 @@
+swagger: '2.0'
+info:
+  version: v1
+  title: 'AliasUsers'
+  description: This API deals with data related to ALIAS users and their details like First Name, Last Name, Email ID and other informations.It performs various CRUD(Create, Retrieve, Update and Delete) actions.
+host: 'localhost:55983'
+schemes:
+  - http
+paths:
+  /api/AliasUsers:
+    x-summary: Create and Retrive Alias Users
+    get:
+      tags:
+        - AliasUsers
+      summary: Returns all ALIAS Users
+      operationId: AliasUsers_GetAliasUsers
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+        - application/xml
+        - text/xml
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AliasUsers'
+    post:
+      tags:
+        - AliasUsers
+      summary: Creates New ALIAS User
+      operationId: AliasUsers_PostAliasUsers
+      consumes:
+        - application/json
+        - text/json
+        - application/xml
+        - text/xml
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+        - application/xml
+        - text/xml
+      parameters:
+        - name: aliasUsers
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/AliasUsers'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AliasUsers'
+  '/api/AliasUsers/{id}':
+    x-summary: Retrieve/Update/Delete AliasUsers details
+    get:
+      tags:
+        - AliasUsers
+      summary: Returns ALIAS Users based on UserId
+      operationId: AliasUsers_GetAliasUsers
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+        - application/xml
+        - text/xml
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AliasUsers'
+    put:
+      tags:
+        - AliasUsers
+      summary: Updates ALIAS user using PUT
+      operationId: AliasUsers_PutAliasUsers
+      consumes:
+        - application/json
+        - text/json
+        - application/xml
+        - text/xml
+        - application/x-www-form-urlencoded
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+        - name: aliasUsers
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/AliasUsers'
+      responses:
+        '204':
+          description: No Content
+    delete:
+      tags:
+        - AliasUsers
+      summary: Deletes ALIAS user
+      operationId: AliasUsers_DeleteAliasUsers
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+        - application/xml
+        - text/xml
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AliasUsers'
+definitions:
+  AliasUsers:
+    type: object
+    properties:
+      UserID:
+        format: int32
+        type: integer
+      UserName:
+        type: string
+      FirstName:
+        type: string
+      LastName:
+        type: string
+      Active:
+        type: boolean
+      DomainName:
+        type: string
+      Email:
+        type: string
+      Location:
+        type: string
